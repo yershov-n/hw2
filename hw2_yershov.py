@@ -31,7 +31,7 @@ def get_avr_data():
         next(reader, None)
         for row in reader:
             dct.update({row['index']: [float(row['height(inc)']), float(row['weight(p)'])]})
-    for key, value in dct.items():
+    for value in dct.values():
         height += value[0]
         weight += value[1]
     return f'Average height is {inch2cm(height/len(dct))} сm, average weight is {pound2kg(weight/len(dct))} kg.'
